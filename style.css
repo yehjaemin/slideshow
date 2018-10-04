@@ -1,0 +1,331 @@
+body {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#start {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start #title {
+    font-family: 'Fredericka the Great', sans-serif;
+    font-size: 0;
+}
+
+#start #title span {
+    font-size: 3rem;
+    opacity: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+#start #start-button {
+    background-color: rgba(220, 220, 220, 0.5);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    text-align: center;
+
+    height: 2.5em;
+    width: 100%;
+
+    margin: 0.5em 0;
+    padding-left: 0.75em;
+}
+
+#start #start-button:hover {
+    background-color: rgba(220, 220, 220, 0.3);
+}
+
+#menu {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu #select {
+    font-family: 'Fredericka the Great', sans-serif;
+}
+
+#menu #slides {
+    background-color: rgba(220, 220, 220, 0.5);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+
+    width: 100%;
+
+    margin: 0.5em 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    -webkit-animation: expand 0.15s ease-out forwards;
+    -moz-animation: expand 0.15s ease-out forwards;
+    animation: expand 0.15s ease-out forwards;
+}
+
+#menu #slides > div {
+    height: 60%;
+    width: 20%;
+}
+
+#menu #slides > div:hover {
+    box-shadow: 0 0 0 5px white;
+}
+
+#menu #reset-button {
+    background-color: rgba(220, 220, 220, 0.5);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+
+    height: 2em;
+    width: 30%;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu #reset-button:hover {
+    background-color: rgba(220, 220, 220, 0.3);
+
+    cursor: default;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#main {
+    background-color: rgba(0, 0, 0, 0.3);
+
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+#main #exit-button {
+    cursor: default;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-family: sans-serif;
+
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    transform: translate(50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main #slide-container {
+    border-radius: 10px;
+
+    height: 80vh;
+    width: 80vw;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+#main #prev-button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+
+    cursor: default;
+
+    height: 50px;
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+#main #next-button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+
+    cursor: default;
+
+    height: 50px;
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+#main .slide {
+    border-radius: 10px;
+
+    height: 80vh;
+    width: 80vw;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#main #reel {
+    height: 10%;
+    width: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+
+    z-index: 10;
+}
+
+#main .dot {
+    background-color: white;
+    border-radius: 999px;
+
+    height: 10px;
+    width: 10px;
+
+    margin: 10px;
+}
+
+#main .current {
+    background-color: gainsboro;
+}
+
+.inactive {
+    display: none !important;
+}
+
+.animation {
+    -webkit-animation: show 0.1s ease-out forwards;
+    -moz-animation: show 0.1s ease-out forwards;
+    animation: show 0.1s ease-out forwards;
+}
+
+.fwd_in {
+    -webkit-animation: fwd_in 0.1s ease-in forwards;
+    -moz-animation: fwd_in 0.1s ease-in forwards;
+    animation: fwd_in 0.1s ease-in forwards;
+}
+
+.fwd_out {
+    -webkit-animation: fwd_out 0.1s ease-in forwards;
+    -moz-animation: fwd_out 0.1s ease-in forwards;
+    animation: fwd_out 0.1s ease-in forwards;
+}
+
+.rev_in {
+    -webkit-animation: rev_in 0.1s ease-in forwards;
+    -moz-animation: rev_in 0.1s ease-in forwards;
+    animation: rev_in 0.1s ease-in forwards;
+}
+
+.rev_out {
+    -webkit-animation: rev_out 0.1s ease-in forwards;
+    -moz-animation: rev_out 0.1s ease-in forwards;
+    animation: rev_out 0.1s ease-in forwards;
+}
+
+@keyframes show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes expand {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 5em;
+    }
+}
+
+@keyframes fwd_in {
+    0% {left: -100%;}
+    100% {left: 0;}
+}
+
+@keyframes fwd_out {
+    0% {left: 0;}
+    100% {left: 100%;}
+}
+
+@keyframes rev_in {
+    0% {left: 100%;}
+    100% {left: 0;}
+}
+
+@keyframes rev_out {
+    0% {left: 0;}
+    100% {left: -100%;}
+}
